@@ -23,3 +23,15 @@
 /public/assets/
 /assets/vendor/
 ###< symfony/asset-mapper ###
+
+.vscode
+.history
+###> friendsofphp/php-cs-fixer ###
+/.php-cs-fixer.php
+/.php-cs-fixer.cache
+###< friendsofphp/php-cs-fixer ###
+
+###> squizlabs/php_codesniffer ###
+/.phpcs-cache
+/phpcs.xml
+###< squizlabs/php_codesniffer ###

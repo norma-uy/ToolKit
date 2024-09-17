@@ -1,0 +1,11 @@
+knp_snappy:
+    temporary_folder: "%kernel.cache_dir%/snappy"
+    process_timeout: 50 # In seconds
+    pdf:
+        enabled:    true
+        binary:     '%env(resolve:WKHTMLTOPDF_PATH)%'
+        options:    []
+    image:
+        enabled:    true
+        binary:     '%env(resolve:WKHTMLTOIMAGE_PATH)%'
+        options:    []

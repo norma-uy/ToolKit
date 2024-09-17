@@ -11,6 +11,12 @@
         "doctrine/doctrine-bundle": "^2.13",
         "doctrine/doctrine-migrations-bundle": "^3.3",
         "doctrine/orm": "^3.2",
+        "h4cc/wkhtmltoimage-amd64": "^0.12.4",
+        "h4cc/wkhtmltoimage-i386": "^0.12.4",
+        "h4cc/wkhtmltopdf-amd64": "^0.12.4",
+        "h4cc/wkhtmltopdf-i386": "^0.12.4",
+        "imagine/imagine": "^1.3",
+        "knplabs/knp-snappy-bundle": "^1.10",
         "phpdocumentor/reflection-docblock": "^5.4",
         "phpstan/phpdoc-parser": "^1.30",
         "symfony/asset": "7.1.*",
@@ -43,7 +49,8 @@
         "symfony/web-link": "7.1.*",
         "symfony/yaml": "7.1.*",
         "twig/extra-bundle": "^2.12|^3.0",
-        "twig/twig": "^2.12|^3.0"
+        "twig/twig": "^2.12|^3.0",
+        "wemersonjanuario/wkhtmltopdf-windows": "^0.12.2"
     },
     "config": {
         "allow-plugins": {
@@ -84,7 +91,19 @@
         ],
         "post-update-cmd": [
             "@auto-scripts"
-        ]
+        ],
+        "format": [
+            "php vendor/bin/php-cs-fixer fix ./src",
+            "php vendor/bin/php-cs-fixer fix ./tests"
+        ],
+        "lint": [
+            "vendor/bin/phpcs ./src ./tests"
+        ],
+        "phpunit": [
+            "php ./bin/phpunit"
+        ],
+        "coverage": "php ./bin/phpunit --coverage-clover=coverage.xml",
+        "htmlCoverage": "php ./bin/phpunit --coverage-html ./tests/coverage"
     },
     "conflict": {
         "symfony/symfony": "*"
@@ -96,7 +115,9 @@
         }
     },
     "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.64",
         "phpunit/phpunit": "^9.5",
+        "squizlabs/php_codesniffer": "^3.10",
         "symfony/browser-kit": "7.1.*",
         "symfony/css-selector": "7.1.*",
         "symfony/debug-bundle": "7.1.*",
