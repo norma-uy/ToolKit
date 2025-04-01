@@ -28,6 +28,15 @@ class GeneratorController extends AbstractController
     /**
      * Image URL Generator.
      */
+    #[Route('/image-generator', name: 'image_generator', methods: ['GET'])]
+    public function imageGeneratorPage(Request $request): Response
+    {
+        return $this->render('generator/index.html.twig', []);
+    }
+
+    /**
+     * Image URL Generator.
+     */
     #[Route('/image-url-generator', name: 'image_url_generator', methods: ['GET'])]
     public function imageURLGenerator(Request $request): Response
     {
