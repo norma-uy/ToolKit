@@ -37,6 +37,10 @@ class GeneratorController extends AbstractController
             throw new BadRequestHttpException('The URL parameter is required');
         }
 
+        if (filter_var($url, FILTER_VALIDATE_URL) === FALSE) {
+            throw new BadRequestHttpException('The URL parameter is invalid');
+        }
+
         $width = intval($request->get('width', 600));
         $height = intval($request->get('height', 1200));
         $quality = intval($request->get('quality', 100));
